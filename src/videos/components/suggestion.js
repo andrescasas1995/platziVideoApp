@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
-import { white } from 'ansi-colors';
 
 function Suggestion(props) {
     return (
@@ -8,16 +7,16 @@ function Suggestion(props) {
             <View style={styles.left}>
                 <Image
                     style={styles.cover}
-                    source={require('../../../assest/angelic.png')}
+                    source={{uri: props.medium_cover_image}}
                 />
                 <View style={styles.genre}>
-                    <Text style={styles.genreText}>Acción</Text>
+                    <Text style={styles.genreText}>{props.genres[0]}</Text>
                 </View>
             </View>
             <View style={styles.right}>
-                <Text style={styles.title}>Avengers</Text>
-                <Text style={styles.year}>2007</Text>
-                <Text style={styles.rating}>5 Estrellas</Text>
+                <Text style={styles.title}>{props.title}</Text>
+                <Text style={styles.year}>{props.year}</Text>
+                <Text style={styles.rating}>{props.rating}</Text>
             </View>
         </View>
     )
