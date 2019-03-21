@@ -13,6 +13,7 @@ import SuggestionList from './src/videos/containers/suggestion-list';
 import CategoryList from './src/videos/containers/category-list';
 import Player from './src/player/containers/player';
 import API from './utils/api';
+import {Provider} from 'react-redux';
 
 type Props = {};
 export default class App extends Component<Props> {

@@ -7,7 +7,7 @@ import {
     Text
 } from 'react-native'
 
-function PlayPause(props) {
+function FullScreen(props) {
     return (
         <TouchableHighlight
             onPress={props.onPress}
@@ -20,9 +20,9 @@ function PlayPause(props) {
                 right: 5
             }}>
             {
-                props.paused ? <Text style={styles.button}>PLAY</Text>
+                props.fullScreen ? <Text style={styles.button}>Normal</Text>
                     :
-                    <Text style={styles.button}>PAUSE</Text>
+                    <Text style={styles.button}>Full</Text>
             }
         </TouchableHighlight>
     )
@@ -46,4 +46,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default PlayPause
+export default FullScreen
