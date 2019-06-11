@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {StyleSheet, ActivityIndicator, Text} from 'react-native';
-import Video from 'react-native-video';
+import Video from 'react-native-video-controls';
 import Layout from '../components/layout';
 import ControlLayout from '../components/control-layout';
 import PlayPause from '../components/play-pause';
@@ -42,29 +42,13 @@ class Player extends Component {
         return (
             <Layout 
             loading={this.state.loading} 
-            video={
+            video = 
+            {
                 <Video 
-                ref={(ref) => {
-                    this.player = ref
-                }}
-                source={{uri: 'https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4'}}
-                style={styles.video}
-                resizeMode="contain"
-                onBuffer={this.onBuffer}
-                onLoad={this.onLoad}
-                paused={this.state.paused} />                
+                    source={{uri: 'https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4'}}
+                />
             }
-            loader={
-                <ActivityIndicator color="red" />
-            }
-            controls={
-                <ControlLayout>
-                    <PlayPause onPress={this.playPause} paused={this.state.paused} />
-                    <Text>Progress bar |</Text>
-                    <Text>Time left |</Text>
-                    <FullScreen onPress={this.putFullScreen} fullScreen={this.state.fullScreen} />
-                </ControlLayout>
-            }>
+            >
             </Layout>
         )
     }
