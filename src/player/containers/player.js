@@ -41,7 +41,7 @@ class Player extends Component {
     render(){
         return (
             <Layout 
-            loading={this.state.loading} 
+            loading={this.state.loading}
             video = 
             {
                 <Video 
