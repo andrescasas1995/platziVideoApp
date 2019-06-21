@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import {Text} from 'react-native';
+import {Text, ScrollView} from 'react-native';
 import {connect} from 'react-redux';
 
 import API from '../utils/api';
 import Home from './screens/containers/home';
 import Header from './sections/components/header';
+import Search from './sections/components/search';
 import SuggestionList from './videos/containers/suggestion-list';
 import CategoryList from './videos/containers/category-list';
 import Movie from './screens/containers/movie';
@@ -13,18 +14,18 @@ class AppLayout extends Component {
     async componentDidMount(){
         const categoryList = await API.getMovies();
         this.props.dispatch({
-        type: 'SET_CATEGORY_LIST',
-        payload: {
-            categoryList
-        }
+            type: 'SET_CATEGORY_LIST',
+            payload: {
+                categoryList
+            }
         });
         
         const suggestionList = await API.getSuggestion(1);
         this.props.dispatch({
-        type: 'SET_SUGGESTION_LIST',
-        payload: {
-            suggestionList
-        }
+            type: 'SET_SUGGESTION_LIST',
+            payload: {
+                suggestionList
+            }
         });
     }
     render() {
@@ -33,15 +34,16 @@ class AppLayout extends Component {
             return <Movie />
         }
         return (
-            <Home>
-              <Header>
-                <Text>AC</Text>
-              </Header>
-              <Movie></Movie>
-              <Text>Buscador</Text>
-              <CategoryList/>
-              <SuggestionList/>
-            </Home>
+            <ScrollView>
+                <Home>
+                <Header>
+                    <Text>AC</Text>
+                </Header>
+                <Search></Search>
+                <CategoryList/>
+                <SuggestionList/>
+                </Home>
+            </ScrollView>
         )
     }
 }
