@@ -8,6 +8,15 @@ import Details from '../../videos/components/details';
 import {connect} from 'react-redux';
 
 class Movie extends Component {
+    static navigationOptions = ({ navigation }) => {
+        return {
+            // header: (
+            //     <Header>
+            //         <Close onPress={() => {navigation.goBack()}} />
+            //     </Header>
+            // )
+        }
+    }
     state = {
         opacity: new Animated.Value(0)
     }
@@ -37,9 +46,6 @@ class Movie extends Component {
                 }}
             >
                 <MovieLayout>
-                    <Header>
-                        <Close onPress={this.closeVideo} />
-                    </Header>
                     {/* <Player></Player> */}
                     <Details
                         {...this.props.movie}
@@ -53,7 +59,7 @@ class Movie extends Component {
 
 function mapStateToProps(state) {
     return {
-        movie: state.selectedMovie
+        movie: state.videos.selectedMovie
     }
 }
 

@@ -10,7 +10,7 @@ import {
 function Header(props){
     return (
         <View>
-            <SafeAreaView>
+            <SafeAreaView style={styles.statusBar}>
                 <View style={styles.container}>
                     <Image 
                         source={{uri:'https://wambamzamzam.weebly.com/uploads/4/9/5/2/49522507/873167751.png'}}
@@ -32,13 +32,16 @@ const styles = StyleSheet.create({
     },
     container: {
         padding:5,
-        backgroundColor: '#E8E8E8',
         flexDirection: 'row'
     },
     right: {
         flex: 1,
         flexDirection: 'row',
-        justifyContent: 'flex-end'
+        justifyContent: 'flex-end',
+        marginTop: 10
+    },
+    statusBar: {
+        backgroundColor: 'white',
     }
 })
 
