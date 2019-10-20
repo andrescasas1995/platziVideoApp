@@ -12,7 +12,6 @@ class Search extends Component {
     }
     handleSubmit = async () => {
         const movies = await API.searchMovie(this.state.text);
-        console.log(movies);
         this.props.dispatch({
             type: 'SET_SELECTED_MOVIE',
             payload: {
