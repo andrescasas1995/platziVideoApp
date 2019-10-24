@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, FlatList, } from 'react-native';
 import Layout from '../components/category-list-layout';
-import Empty from '../components/empty';
+import Empty from '../components/Empty';
 import Separator from '../../sections/components/horizontal-separator';
 import Category from '../components/category';
 import { connect } from 'react-redux';

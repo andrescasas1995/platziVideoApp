@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { FlatList, Text } from 'react-native';
 import Layout from '../../videos/components/suggestion-list-layout';
-import Empty from '../../videos/components/empty';
+import Empty from '../../videos/components/Empty';
 import Separator from '../../videos/components/vertical-separator';
 import Suggestion from '../../videos/components/suggestion';
 import { connect } from 'react-redux';
