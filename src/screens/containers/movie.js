@@ -1,24 +1,26 @@
 import React, { Component } from 'react';
-import {Animated} from 'react-native';
 import MovieLayout from '../components/movie';
 import Player from '../../player/containers/player';
 import Header from '../../sections/components/header';
 import Close from '../../sections/components/close';
+import { connect } from 'react-redux';
 import Details from '../../videos/components/details';
-import {connect} from 'react-redux';
+import { View, Animated } from 'react-native';
 
 class Movie extends Component {
+    state = {
+        opacity: new Animated.Value(0)
+    }
     static navigationOptions = ({ navigation }) => {
         return {
             // header: (
             //     <Header>
-            //         <Close onPress={() => {navigation.goBack()}} />
+            //         <Close 
+            //          onPress={() => {navigation.goBack()}} 
+            //          />
             //     </Header>
             // )
         }
-    }
-    state = {
-        opacity: new Animated.Value(0)
     }
     closeVideo = () => {
         this.props.dispatch({
@@ -32,7 +34,7 @@ class Movie extends Component {
         Animated.timing(
             this.state.opacity,
             {
-                toValue:1,
+                toValue: 1,
                 duration: 1000
             }
         ).start();
@@ -46,11 +48,13 @@ class Movie extends Component {
                 }}
             >
                 <MovieLayout>
+                    <View style={{
+                        height: 20,
+                        backgroundColor: "black"
+                    }}>
+                    </View>
                     {/* <Player></Player> */}
-                    <Details
-                        {...this.props.movie}
-                    >                    
-                    </Details>
+                    <Details {...this.props.movie} />
                 </MovieLayout>
             </Animated.View>
         )

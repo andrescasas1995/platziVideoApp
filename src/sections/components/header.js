@@ -31,8 +31,10 @@ const styles = StyleSheet.create({
         resizeMode: 'contain'
     },
     container: {
-        padding:5,
-        flexDirection: 'row'
+        padding:2,
+        flexDirection: 'row',
+        borderBottomWidth: 1,
+        borderBottomColor: "#eaeaea",
     },
     right: {
         flex: 1,
